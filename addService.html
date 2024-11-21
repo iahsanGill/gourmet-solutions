@@ -12,16 +12,7 @@
 
     <!-- Header -->
     <header>
-    
-        <!-- Website Name -->
         <h1>Gourmet Lunch Solutions</h1>
-
-        <div class="bg-change-button" id="toggle-background">
-            <span>Change Background</span>
-            <img src="assets/sun-icon.png" alt="Sun Icon">
-        </div>
-
-        <!-- Navigaion Bar --> 
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -31,34 +22,34 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-        <!-- TO BE STYLED BY CSS -->
     </header>
+
+    <div class="bg-change-button" id="toggle-background">
+        <span>Change Background</span>
+        <img src="assets/sun-icon.png" alt="Sun Icon">
+    </div>
+
+    <!-- Form to Add Service -->
+    <form id="addServiceForm">
+        <label for="serviceName">Service Name:</label>
+        <input type="text" id="serviceName" required><br>
     
-    <form action="" method="post">
-        <label for="name">Full Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="phone">Phone Number:</label><br>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{2}-3[0-9]{2}-[0-9]{7}" placeholder="92-3XX-XXXXXXX" required><br><br>
-
-        <label for="select">Select Plan:</label><br>
-        <select name="select" id="select">
-            <option value="Plan1">Gourmet Lunch Boxes</option>
-            <option value="Plan2">Freshly Baked Bread and Breakfast</option>
-            <option value="Plan3">Hot Lunches (Daily Changing Menu)</option>
-            <option value="Plan4">Picnic Packages (Local School Trips)</option>
-            <option value="Plan5">Special Events Finger Food Platters</option>
-        </select><br><br>
-
-        <label for="message">Message:</label><br>
-        <textarea id="message" name="message" rows="4" cols="50" placeholder="What kind of food do you enjoy."></textarea><br><br>
-
-        <input type="submit" value="Register">
+        <label for="price">Price (PKR):</label>
+        <input type="number" id="price" required><br>
+    
+        <label for="deliveryTime">Delivery Time:</label>
+        <input type="text" id="deliveryTime" required><br>
+    
+        <label for="mealDescription">Meal Description:</label>
+        <input type="text" id="mealDescription" required><br>
+    
+        <label for="nutritionalInfo">Nutritional Info:</label>
+        <input type="text" id="nutritionalInfo" required><br>
+    
+        <button type="button" onclick="AddItem()" class="details-btn">Add Service</button>
     </form>
     
+
     <!-- Footer -->
     <footer>
         <div class="footer-content">
@@ -69,7 +60,7 @@
                 <a href="https://www.instagram.com/gourmetlunch" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.linkedin.com/gourmetlunch" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
-            <p class="copyright">© 2024 Your Company. All Rights Reserved.</p>
+            <p>© 2024 Your Company. All Rights Reserved.</p>
         </div>
 
         <div class="text-style-buttons">
@@ -77,5 +68,6 @@
             <button id="reset-text-style">Reset Text Style</button>
         </div>
     </footer>
+
 </body>
 </html>

@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunch Box Services</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
 
     <!-- Header -->
     <header>
-    
-        <!-- Website Name -->
         <h1>Gourmet Lunch Solutions</h1>
 
-        <!-- Navigaion Bar --> 
+        <div class="bg-change-button" id="toggle-background">
+            <span>Change Background</span>
+            <img src="assets/sun-icon.png" alt="Sun Icon">
+        </div>
+
         <nav>
             <ul>
                 <li><a href="home.html">Home</a></li>
@@ -28,48 +30,157 @@
         </nav>
     </header>
 
+    <!-- Buttons to Add and Remove Items -->
+    <div>
+        <button onclick="openForm()" class="details-btn" style="margin: 10px;">Add Item</button>
+        <button onclick="removeLastItem()" class="details-btn" style="margin: 10px;">Remove Last Item</button>
+    </div>
+
+    <!-- Services Table -->
     <table>
-        <h5>
+        <thead>
             <tr>
-            <th>Service</th>
-            <th>Price (PKR)</th>
-            <th>Delivery Time</th>
-            <th>Meal Quantity</th>
-        </tr>
-        </h5>
-        <tr>
-            <td>Gourmet Lunch Boxes</td>
-            <td>500</td>
-            <td>12:00 PM - 1:00 PM</td>
-            <td>1 Gourmet Box</td>
-        </tr>
-        <tr>
-            <td>Freshly Baked Bread and Breakfast</td>
-            <td>300</td>
-            <td>7:00 AM - 9:00 AM</td>
-            <td>1 Breakfast Combo</td>
-        </tr>
-        <tr>
-            <td>Hot Lunches (Daily Changing Menu)</td>
-            <td>450</td>
-            <td>1:00 PM - 2:00 PM</td>
-            <td>1 Hot Meal</td>
-        </tr>
-        <tr>
-            <td>Picnic Packages (Local School Trips)</td>
-            <td>1000</td>
-            <td>8:00 AM - 9:00 AM</td>
-            <td>5 Boxes</td>
-        </tr>
-        <tr>
-            <td>Special Events Finger Food Platters</td>
-            <td>2000</td>
-            <td>Custom Time</td>
-            <td>10 Platters</td>
-        </tr>
-    </table>
+                <th>Service</th>
+                <th>Price (PKR)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="serviceTableBody">
+            <!-- Row 1 -->
+            <tr>
+                <td>Gourmet Lunch Boxes</td>
+                <td>500</td>
+                <td>
+                    <button class="details-btn" data-details-id="details-1">Show Details</button>
+                    <button class="hide-btn" data-hide-id="details-1">Hide Details</button>
+                </td>
+            </tr>
+            <tr class="details-row" id="details-1">
+                <td colspan="3">
+                    <div class="details-content">
+                        <strong>Delivery Time:</strong> 12:00 PM - 1:00 PM <br>
+                        <strong>Meal:</strong> Gourmet sandwich, seasonal salad, and a dessert <br>
+                        <strong>Nutritional Info:</strong> 550 kcal, 20g protein
+                    </div>
+                </td>
+            </tr>
     
-    <!-- Footer -->
+            <!-- Row 2 -->
+            <tr>
+                <td>Vegan Power Bowl</td>
+                <td>450</td>
+                <td>
+                    <button class="details-btn" data-details-id="details-2">Show Details</button>
+                    <button class="hide-btn" data-hide-id="details-2">Hide Details</button>
+                </td>
+            </tr>
+            <tr class="details-row" id="details-2">
+                <td colspan="3">
+                    <div class="details-content">
+                        <strong>Delivery Time:</strong> 11:00 AM - 12:00 PM <br>
+                        <strong>Meal:</strong> Quinoa, roasted vegetables, and tahini dressing <br>
+                        <strong>Nutritional Info:</strong> 400 kcal, 15g protein
+                    </div>
+                </td>
+            </tr>
+    
+            <!-- Row 3 -->
+            <tr>
+                <td>Vegetarian Italian Platter</td>
+                <td>700</td>
+                <td>
+                    <button class="details-btn" data-details-id="details-3">Show Details</button>
+                    <button class="hide-btn" data-hide-id="details-3">Hide Details</button>
+                </td>
+            </tr>
+            <tr class="details-row" id="details-3">
+                <td colspan="3">
+                    <div class="details-content">
+                        <strong>Delivery Time:</strong> 6:00 PM - 7:00 PM <br>
+                        <strong>Meal:</strong> Margherita pizza, minestrone soup, and tiramisu <br>
+                        <strong>Nutritional Info:</strong> 800 kcal, 25g protein
+                    </div>
+                </td>
+            </tr>
+    
+            <!-- Row 4 -->
+            <tr>
+                <td>Street Food Sampler</td>
+                <td>300</td>
+                <td>
+                    <button class="details-btn" data-details-id="details-4">Show Details</button>
+                    <button class="hide-btn" data-hide-id="details-4">Hide Details</button>
+                </td>
+            </tr>
+            <tr class="details-row" id="details-4">
+                <td colspan="3">
+                    <div class="details-content">
+                        <strong>Delivery Time:</strong> 4:00 PM - 5:00 PM <br>
+                        <strong>Meal:</strong> Samosas, pakoras, and chutney <br>
+                        <strong>Nutritional Info:</strong> 600 kcal, 10g protein
+                    </div>
+                </td>
+            </tr>
+    
+            <!-- Row 5 -->
+            <tr>
+                <td>Luxury Seafood Feast</td>
+                <td>2000</td>
+                <td>
+                    <button class="details-btn" data-details-id="details-5">Show Details</button>
+                    <button class="hide-btn" data-hide-id="details-5">Hide Details</button>
+                </td>
+            </tr>
+            <tr class="details-row" id="details-5">
+                <td colspan="3">
+                    <div class="details-content">
+                        <strong>Delivery Time:</strong> 7:00 PM - 8:30 PM <br>
+                        <strong>Meal:</strong> Grilled lobster, garlic butter shrimp, and caviar <br>
+                        <strong>Nutritional Info:</strong> 900 kcal, 50g protein
+                    </div>
+                </td>
+            </tr>
+    
+            <!-- Row 6 -->
+            <tr>
+                <td>Japanese Bento Box</td>
+                <td>850</td>
+                <td>
+                    <button class="details-btn" data-details-id="details-6">Show Details</button>
+                    <button class="hide-btn" data-hide-id="details-6">Hide Details</button>
+                </td>
+            </tr>
+            <tr class="details-row" id="details-6">
+                <td colspan="3">
+                    <div class="details-content">
+                        <strong>Delivery Time:</strong> 12:30 PM - 1:30 PM <br>
+                        <strong>Meal:</strong> Sushi rolls, miso soup, and teriyaki chicken <br>
+                        <strong>Nutritional Info:</strong> 700 kcal, 30g protein
+                    </div>
+                </td>
+            </tr>
+    
+            <!-- Row 7 -->
+            <tr>
+                <td>Budget Box</td>
+                <td>250</td>
+                <td>
+                    <button class="details-btn" data-details-id="details-7">Show Details</button>
+                    <button class="hide-btn" data-hide-id="details-7">Hide Details</button>
+                </td>
+            </tr>
+            <tr class="details-row" id="details-7">
+                <td colspan="3">
+                    <div class="details-content">
+                        <strong>Delivery Time:</strong> 10:00 AM - 11:00 AM <br>
+                        <strong>Meal:</strong> Rice and lentil curry, with pickled vegetables <br>
+                        <strong>Nutritional Info:</strong> 350 kcal, 12g protein
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>    
+
     <footer>
         <div class="footer-content">
             <p>Follow Us:</p>
@@ -80,6 +191,11 @@
                 <a href="https://www.linkedin.com/gourmetlunch" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
             <p class="copyright">© 2024 Your Company. All Rights Reserved.</p>
+        </div>
+
+        <div class="text-style-buttons">
+            <button id="change-text-style">Change Text Style</button>
+            <button id="reset-text-style">Reset Text Style</button>
         </div>
     </footer>
 </body>

@@ -7,23 +7,47 @@ html, body {
     margin: 0;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background: url('kitchen.jpg') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-}
-
 /* Color Scheme */
 :root {
     --green: #97b440; /* Green for accents */
-    --brown: #7d5131; /* Brown for footer and borders */
+    --brown: #b16d3c; /* Brown for footer and borders */
     --white: #fff;
+    --bg-color: #ffffff; /* Light background */
+    --text-color: #000000; /* Light text */
+    --paragraph-bg-color: rgba(255, 255, 255, 0.8); /* Light background for paragraphs */
+    --heading-color: rgb(90, 116, 44);
+    --nav-button: darkgreen;
+    --nav-bg: white;
+    --nav-hover: #b9c45b;
+}
+
+/* Dark theme overrides */
+.dark-theme {
+    --text-color: #ffffff; /* Dark text */
+    --paragraph-bg-color: rgba(0, 0, 0, 0.8); /* Dark background for paragraphs */
+    --heading-color: #7ed437;
+    --nav-button: rgb(115, 195, 49);
+    --nav-bg: black;
+    --nav-hover: #545c12;
+}
+
+/* Apply text style changes when class is added */
+.text-style-changed p{
+    font-family: 'Courier New', Courier, monospace;
+    color: #a35c00; /* Bright brown color */
+    font-weight: 900;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: url('../assests/kitchen.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header and Navigation */
@@ -61,8 +85,8 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: darkgreen;
-    background-color: #f8f8f8;
+    color: var(--nav-button);
+    background-color: var(--nav-bg);
     padding: 10px 15px;
     border-radius: 10px;
     border: 3px solid darkgreen; /* Thicker outline */
@@ -78,15 +102,16 @@ nav ul li a {
 
 /* Hover effect for the links (buttons) */
 nav ul li a:hover {
-    background-color: #b9c45b; /* Light brown shade */
-    color: darkgreen;
+    background-color: var(--nav-hover); /* Light brown shade */
+    color: var(--nav-button);
     transform: scale(1.05); /* Slight size increase */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for more emphasis */
 }
 
 /* Semi-transparent box for welcome message */
 .welcome-box {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
     padding: 20px;
     border-radius: 10px;
     max-width: 80%;
@@ -105,7 +130,8 @@ nav ul li a:hover {
 
 /* Semi-transparent box for quotes */
 .quote-box {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
     padding: 15px;
     border-radius: 10px;
     max-width: 40%;
@@ -115,13 +141,14 @@ nav ul li a:hover {
 }
 
 /* Typography */
+
 h1 {
     color: var(--green);
     text-align: center;
 }
 
 h2 {
-    color: rgb(90, 116, 44);
+    color: var(--heading-color);
     text-align: center;
 }
 
@@ -133,7 +160,6 @@ h3, h5 {
 p {
     padding: 0 20px;
     text-align: center;
-    color: #333;
 }
 
 /* Forms */
@@ -141,7 +167,8 @@ form {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: var(--white);
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     width: 100%; /* Ensures the form stretches within the container */
@@ -157,7 +184,8 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="tel"],
-textarea {
+input[type="number"],
+textarea, select {
     width: calc(100% - 20px); /* Makes sure input fields don't overflow */
     padding: 10px;
     margin: 10px 0;
@@ -203,11 +231,11 @@ table th, table td {
 
 table th {
     background-color: var(--green);
-    color: var(--white);
 }
 
 table td {
-    background-color: var(--white);
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
 }
 
 /* Responsive Layout */
@@ -248,7 +276,8 @@ table td {
 
 /* Individual Feature Boxes */
 .feature-box {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
     padding: 20px;
     border-radius: 10px;
     width: 30%; /* Controls the size of each box */
@@ -259,14 +288,14 @@ table td {
 }
 
 .feature-box h3 {
-    color: rgb(51, 68, 19); /* Green text for consistency */
+    color: rgb(129, 178, 36); /* Green text for consistency */
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .feature-box p {
     font-size: 1rem;
-    color: #333; /* Dark gray for the text */
+    
 }
 
 /* Hover effect for the feature boxes */
@@ -277,8 +306,8 @@ table td {
 
 /* About Us Text Box */
 .about-us-box {
-    background-color: rgba(255, 255, 255, 0.9);
-    
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
     border-radius: 15px;
     max-width: 70%;
     margin: 30px auto;
@@ -293,7 +322,6 @@ table td {
 .user-reviews-title {
     font-family: 'Lobster', cursive;
     font-size: 3rem;
-    color: var(--white);
     text-align: center;
     text-transform: uppercase;
     margin-top: 40px;
@@ -301,11 +329,13 @@ table td {
     letter-spacing: 2px;
     position: relative;
     text-shadow: 2px 2px 4px black; /* Black outline effect */
+    color: white;
 }
 
 /* Reviews Box (Similar to the quotes) */
 .review-box {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
     padding: 20px;
     border-radius: 10px;
     max-width: 40%;
@@ -325,7 +355,8 @@ table td {
 
 /* Contact Info Box (Above the Form) */
 .contact-info-box {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
     border-radius: 10px;
     max-width: 42%;
     margin: 20px auto;
@@ -341,7 +372,7 @@ table td {
 }
 
 .contact-info-box a {
-    color: rgb(51, 68, 19);
+    color: rgb(124, 167, 46);
     text-decoration: none;
     font-weight: bold;
 }
@@ -357,6 +388,7 @@ footer {
     padding: 20px 0;
     margin-top: auto; /* Pushes the footer to the bottom */
     font-size: 1.1rem; /* Slightly bigger text */
+    position: relative;
 }
 
 footer a {
@@ -398,4 +430,105 @@ footer a:hover {
 .footer-content .copyright {
     margin-top: 20px;
     font-size: 1rem;
+}
+
+.bg-change-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Verdana', sans-serif;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.bg-change-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.bg-change-button:hover {
+    color: var(--black);
+}
+
+.details-row {
+    display: none; /* Initially hidden */
+    overflow: hidden; /* Ensures no content spills out during animation */
+    height: 0;
+    transition: height 0.3s ease; /* Smooth height change */
+}
+
+.details-row.active {
+    display: table-row; /* Ensure it displays as a row when expanded */
+    height: auto; /* Allows height to adjust dynamically based on content */
+}
+
+.details-content {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    animation: expand 0.7s ease; /* Smooth expansion animation */
+}
+
+@keyframes expand {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+.details-btn,
+.hide-btn {
+    background-color: #94d237;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin-right: 5px; /* Add spacing between the buttons */
+    display: inline-block; /* Ensure they are displayed inline */
+}
+
+.details-btn:hover,
+.hide-btn:hover {
+    background-color: #a97726;
+}
+
+/* Updated style for text style buttons in footer */
+.text-style-buttons {
+    position: absolute; /* Position relative to the footer */
+    top: 10px; /* Distance from the top of the footer */
+    left: 10px; /* Distance from the left of the footer */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Space between buttons */
+}
+
+.text-style-buttons button {
+    width: 200px; /* Bigger buttons */
+    padding: 12px 20px;
+    font-size: 16px; /* Larger text */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    background-color: var(--green);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.text-style-buttons button:hover {
+    background-color: #748c2b;
+    color: black;
 }

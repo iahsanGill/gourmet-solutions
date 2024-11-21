@@ -1,0 +1,401 @@
+/* Import Google font */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:wght@500&display=swap');
+
+/* General Styling */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: url('kitchen.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Color Scheme */
+:root {
+    --green: #97b440; /* Green for accents */
+    --brown: #7d5131; /* Brown for footer and borders */
+    --white: #fff;
+}
+
+/* Header and Navigation */
+header {
+    background-color: var(--green);
+    text-align: left;
+}
+
+header h1 {
+    font-family: 'Lobster', cursive; /* You can also try 'Playfair Display' */
+    font-size: 3.5rem;
+    color: white; /* Earthy green color */
+    padding-left: 30px;
+    text-align: left;
+    margin: 0;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: var(--brown);
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: darkgreen;
+    background-color: #f8f8f8;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 3px solid darkgreen; /* Thicker outline */
+    font-size: 1.1rem;
+    font-family: 'Verdana', sans-serif;
+    font-weight: bold; /* Make the text bolder */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    width: 120px; /* Make the buttons less wide */
+    text-align: center;
+    outline: none;
+}
+
+/* Hover effect for the links (buttons) */
+nav ul li a:hover {
+    background-color: #b9c45b; /* Light brown shade */
+    color: darkgreen;
+    transform: scale(1.05); /* Slight size increase */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for more emphasis */
+}
+
+/* Semi-transparent box for welcome message */
+.welcome-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Sleek green lines */
+.line {
+    width: 50%;
+    margin: 20px auto;
+    border-bottom: 2px solid rgb(124, 188, 35);
+}
+
+/* Semi-transparent box for quotes */
+.quote-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 40%;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Typography */
+h1 {
+    color: var(--green);
+    text-align: center;
+}
+
+h2 {
+    color: rgb(90, 116, 44);
+    text-align: center;
+}
+
+h3, h5 {
+    color: var(--brown);
+    text-align: center;
+}
+
+p {
+    padding: 0 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Forms */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensures the form stretches within the container */
+}
+
+/* Labels */
+label {
+    font-size: 1.1rem;
+    color: var(--brown);
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: calc(100% - 20px); /* Makes sure input fields don't overflow */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid var(--green);
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+/* Submit and Register Buttons */
+input[type="submit"] {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 10px 20px;
+    border: 2px solid var(--green); /* Add a green border for the outline */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smoother transition */
+}
+
+/* Hover Effect for Submit and Register Buttons */
+input[type="submit"]:hover {
+    background-color: var(--brown); /* On hover, the background turns brown */
+    color: var(--white);
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    border-color: var(--brown); /* Change the border color to brown on hover */
+}
+
+
+/* Tables */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid var(--green);
+    text-align: center;
+}
+
+table th {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+table td {
+    background-color: var(--white);
+}
+
+/* Responsive Layout */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    form, table {
+        width: 95%;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* Styling for the "What We Provide" section */
+.what-we-provide {
+    font-family: 'Lobster', cursive; /* Similar to the header title */
+    font-size: 3rem;
+    color: var(--white); /* Use the same green as header for consistency */
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px black; /* Black outline effect */
+}
+
+/* Features Section - Displaying in a horizontal row */
+.features {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Adds space between the boxes */
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Optional: max width for large screens */
+}
+
+/* Individual Feature Boxes */
+.feature-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%; /* Controls the size of each box */
+    text-align: center;
+    border: 2px solid var(--green); /* Green border */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box h3 {
+    color: rgb(51, 68, 19); /* Green text for consistency */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    color: #333; /* Dark gray for the text */
+}
+
+/* Hover effect for the feature boxes */
+.feature-box:hover {
+    transform: scale(1.05); /* Slightly enlarges the box */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* About Us Text Box */
+.about-us-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    
+    border-radius: 15px;
+    max-width: 70%;
+    margin: 30px auto;
+    font-size: 1.4rem;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1); /* Add some shadow for elegance */
+    border: 2px solid var(--green); /* Green border for consistency */
+}
+
+/* User Reviews Title */
+.user-reviews-title {
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+    color: var(--white);
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    position: relative;
+    text-shadow: 2px 2px 4px black; /* Black outline effect */
+}
+
+/* Reviews Box (Similar to the quotes) */
+.review-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 40%;
+    margin: 20px auto;
+    font-size: 0.9rem;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    border: 2px solid var(--green); /* Green border */
+}
+
+/* Optional: Style for text inside reviews */
+.review-box p {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Contact Info Box (Above the Form) */
+.contact-info-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    max-width: 42%;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 2px solid var(--green);
+    font-family: 'Verdana', sans-serif;
+}
+
+/* Contact Info Box Style (Individual Contact Items) */
+.contact-info-box p {
+    margin: 10px 0;
+}
+
+.contact-info-box a {
+    color: rgb(51, 68, 19);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info-box a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: var(--brown);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Pushes the footer to the bottom */
+    font-size: 1.1rem; /* Slightly bigger text */
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Footer extra content styling */
+.footer-content {
+    max-width: 80%;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    color: white;
+}
+
+/* Footer social media icons */
+.footer-content .social-icons a {
+    margin: 0 15px; /* Space between icons */
+    font-size: 2rem; /* Size of the icons */
+    color: var(--white); /* Color of the icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect for Social Media Icons */
+.footer-content .social-icons a:hover {
+    color: var(--green); /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge the icons on hover */
+}
+
+/* Footer copyright section */
+.footer-content .copyright {
+    margin-top: 20px;
+    font-size: 1rem;
+}

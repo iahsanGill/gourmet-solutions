@@ -9,8 +9,10 @@ class LunchBoxController extends Controller
 {
     public function index()
     {
-        $lunchBoxes = LunchBox::where('is_available', true)->get();
-        return view('menu', compact('lunchBoxes'));
+        // Fetch all lunch boxes from the database
+        $lunchBoxes = LunchBox::all();  // Fetching all lunch boxes
+
+        return view('lunch_boxes.index', compact('lunchBoxes'));
     }
 
     public function adminIndex()

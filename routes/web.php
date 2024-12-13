@@ -21,7 +21,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // Admin Routes (Protected)
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     // Lunch Box Management
-    Route::get('/lunchboxes', [LunchBoxController::class, 'adminIndex'])->name('admin.lunchboxes');
+    Route::get('/lunch-boxes', [LunchBoxController::class, 'index']);
     Route::get('/lunchboxes/create', [LunchBoxController::class, 'create'])->name('admin.lunchboxes.create');
     Route::post('/lunchboxes', [LunchBoxController::class, 'store'])->name('admin.lunchboxes.store');
     Route::get('/lunchboxes/{lunchBox}/edit', [LunchBoxController::class, 'edit'])->name('admin.lunchboxes.edit');

@@ -1,0 +1,1108 @@
+/* Import Google font */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Playfair+Display:wght@500&display=swap');
+
+/* General Styling */
+html, body {
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Color Scheme */
+:root {
+    --green: #97b440; /* Green for accents */
+    --brown: #b16d3c; /* Brown for footer and borders */
+    --white: #fff;
+    --bg-color: #ffffff; /* Light background */
+    --text-color: #000000; /* Light text */
+    --paragraph-bg-color: rgba(255, 255, 255, 0.8); /* Light background for paragraphs */
+    --heading-color: rgb(116, 159, 42);
+    --nav-button: darkgreen;
+    --nav-bg: white;
+    --nav-hover: #b9c45b;
+}
+
+/* Dark theme overrides */
+.dark-theme {
+    --text-color: #ffffff; /* Dark text */
+    --paragraph-bg-color: rgba(0, 0, 0, 0.8); /* Dark background for paragraphs */
+    --heading-color: #7ed437;
+    --nav-button: rgb(115, 195, 49);
+    --nav-bg: black;
+    --nav-hover: #545c12;
+}
+
+/* Apply text style changes when class is added */
+.text-style-changed p{
+    font-family: 'Courier New', Courier, monospace;
+    color: #a35c00; /* Bright brown color */
+    font-weight: 900;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: url('../images/kitchen.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+main {
+    flex: 1 0 auto;
+    padding-bottom: 40px; /* Space for footer */
+    min-height: calc(100vh - 180px); /* Subtract header + footer height */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--green);
+    text-align: left;
+}
+
+header h1 {
+    font-family: 'Lobster', cursive; /* You can also try 'Playfair Display' */
+    font-size: 3.5rem;
+    color: white; /* Earthy green color */
+    padding-left: 30px;
+    text-align: left;
+    margin: 0;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: var(--brown);
+    padding: 10px 0;
+    text-align: left; /* Changed from center to left */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 30px; /* Add left padding to align with header text */
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--nav-button);
+    background-color: var(--nav-bg);
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 3px solid darkgreen; /* Thicker outline */
+    font-size: 1.1rem;
+    font-family: 'Verdana', sans-serif;
+    font-weight: bold; /* Make the text bolder */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    width: 120px; /* Make the buttons less wide */
+    text-align: center;
+    outline: none;
+}
+
+/* Hover effect for the links (buttons) */
+nav ul li a:hover {
+    background-color: var(--nav-hover); /* Light brown shade */
+    color: var(--nav-button);
+    transform: scale(1.05); /* Slight size increase */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Add a slight shadow for more emphasis */
+}
+
+/* Disabled link style */
+.disabled-link {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+    pointer-events: none;
+    background-color: var(--paragraph-bg-color) !important;
+    border-color: #092600 !important;
+    color: #193500 !important;
+}
+
+/* Semi-transparent box for welcome message */
+.welcome-box {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Sleek green lines */
+.line {
+    width: 50%;
+    margin: 10px auto; /* Reduced margin to match quote boxes */
+    border-bottom: 2px solid rgb(124, 188, 35);
+}
+
+/* Semi-transparent box for quotes */
+.quote-box {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 10px auto; /* Reduced margin between boxes */
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.quote-box p {
+    margin: 5px 0;
+}
+
+.quote-author {
+    font-weight: bold;
+    color: var(--brown);
+    font-size: 1rem;
+}
+
+/* Typography */
+h1 {
+    color: var(--green);
+    text-align: center;
+}
+
+h2 {
+    color: var(--heading-color);
+    text-align: center;
+
+}
+
+.small-h2 {
+    color: white;
+}
+
+h3, h5 {
+    color: var(--brown);
+    text-align: center;
+}
+
+p {
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Forms */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensures the form stretches within the container */
+}
+
+/* Labels */
+label {
+    font-size: 1.1rem;
+    color: var(--brown);
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea, select {
+    width: calc(100% - 20px); /* Makes sure input fields don't overflow */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid var(--green);
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+/* Submit and Register Buttons */
+input[type="submit"] {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 10px 20px;
+    border: 2px solid var(--green); /* Add a green border for the outline */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smoother transition */
+}
+
+/* Hover Effect for Submit and Register Buttons */
+input[type="submit"]:hover {
+    background-color: var(--brown); /* On hover, the background turns brown */
+    color: var(--white);
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    border-color: var(--brown); /* Change the border color to brown on hover */
+}
+
+/* Place Order Form Styling */
+.place-order-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensures the form stretches within the container */
+}
+
+.place-order-form label {
+    font-size: 1.1rem;
+    color: var(--brown);
+}
+
+.place-order-form input[type="text"],
+.place-order-form input[type="email"],
+.place-order-form input[type="tel"],
+.place-order-form input[type="number"],
+.place-order-form textarea, 
+.place-order-form select {
+    width: calc(100% - 20px); /* Makes sure input fields don't overflow */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid var(--green);
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+.place-order-form input[type="submit"] {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 10px 20px;
+    border: 2px solid var(--green); /* Add a green border for the outline */
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.5s ease, color 0.5s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smoother transition */
+}
+
+.place-order-form input[type="submit"]:hover {
+    background-color: var(--brown); /* On hover, the background turns brown */
+    color: var(--white);
+    transform: scale(1.05); /* Slightly enlarges the button */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+    border-color: var(--brown); /* Change the border color to brown on hover */
+}
+
+/* Place Order Modal Styling */
+.place-order-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.place-order-modal-content {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid var(--green);
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.place-order-modal-content .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.place-order-modal-content .form-group label {
+    margin-bottom: 5px;
+}
+
+.place-order-modal-content .form-group input,
+.place-order-modal-content .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.place-order-modal-content input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.place-order-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+/* Error Styling */
+.error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.error-message {
+    background-color: rgba(220, 53, 69, 0.1);
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.error-message ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.error-message li {
+    margin-bottom: 5px;
+}
+
+.error-message li:last-child {
+    margin-bottom: 0;
+}
+
+/* Tables */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid var(--green);
+    text-align: center;
+}
+
+table th {
+    background-color: var(--green);
+}
+
+table td {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+}
+
+/* Styling for the "What We Provide" section */
+.what-we-provide {
+    font-family: 'Lobster', cursive; /* Similar to the header title */
+    font-size: 3rem;
+    color: var(--white); /* Use the same green as header for consistency */
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px black; /* Black outline effect */
+}
+
+/* Features Section - Displaying in a horizontal row */
+.features {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Adds space between the boxes */
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px; /* Optional: max width for large screens */
+}
+
+.feature-box {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%; /* Controls the size of each box */
+    text-align: center;
+    border: 2px solid var(--green); /* Green border */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-box h3 {
+    color: rgb(129, 178, 36); /* Green text for consistency */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-box p {
+    font-size: 1rem;
+    
+}
+
+/* Hover effect for the feature boxes */
+.feature-box:hover {
+    transform: scale(1.05); /* Slightly enlarges the box */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* About Us Text Box */
+.about-us-box {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+    border-radius: 15px;
+    max-width: 70%;
+    margin: 30px auto;
+    padding-bottom: 20px;
+    font-size: 1.2rem;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1); /* Add some shadow for elegance */
+    border: 2px solid var(--green); /* Green border for consistency */
+}
+
+/* User Reviews Title */
+.user-reviews-title {
+    font-family: 'Lobster', cursive;
+    font-size: 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    position: relative;
+    text-shadow: 2px 2px 4px black; /* Black outline effect */
+    color: white;
+}
+
+/* Reviews Box (Similar to the quotes) */
+.review-box {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 40%;
+    margin: 20px auto;
+    font-size: 0.9rem;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    border: 2px solid var(--green); /* Green border */
+}
+
+/* Optional: Style for text inside reviews */
+.review-box p {
+    margin: 0;
+    font-weight: light;
+}
+
+.review-box h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Contact Info Box (Above the Form) */
+.contact-info-box {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    max-width: 42%;
+    margin: 20px auto;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 2px solid var(--green);
+    font-family: 'Verdana', sans-serif;
+}
+
+/* Contact Info Box Style (Individual Contact Items) */
+.contact-info-box p {
+    margin: 10px 0;
+}
+
+.contact-info-box a {
+    color: rgb(124, 167, 46);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info-box a:hover {
+    text-decoration: underline;
+}
+
+/* Styling for the footer section at the bottom */
+footer {
+    background-color: var(--brown);
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Pushes the footer to the bottom */
+    font-size: 1.1rem; /* Slightly bigger text */
+    position: relative;
+    bottom: 0;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Footer extra content styling */
+.footer-content {
+    max-width: 80%;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.footer-content p {
+    margin: 5px 0;
+    color: white;
+}
+
+/* Footer social media icons */
+.footer-content .social-icons a {
+    margin: 0 15px; /* Space between icons */
+    font-size: 2rem; /* Size of the icons */
+    color: var(--white); /* Color of the icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-content .social-icons a:hover {
+    color: var(--green); /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge the icons on hover */
+}
+
+.footer-content .copyright {
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+/* Background change button at top right*/
+.bg-change-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    color: white;
+    font-family: 'Verdana', sans-serif;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.bg-change-button img {
+    width: 30px;
+    height: 30px;
+}
+
+.bg-change-button:hover {
+    color: var(--black);
+}
+
+/* Row details that collapse on click */
+.details-row {
+    display: none; /* Initially hidden */
+    overflow: hidden; /* Ensures no content spills out during animation */
+    height: 0;
+    transition: height 0.3s ease; /* Smooth height change */
+}
+
+.details-row.active {
+    display: table-row; /* Ensure it displays as a row when expanded */
+    height: auto; /* Allows height to adjust dynamically based on content */
+}
+
+.details-content {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    animation: expand 0.7s ease; /* Smooth expansion animation */
+}
+
+@keyframes expand {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+.details-btn,
+.hide-btn,
+.order-btn {
+    background-color: #94d237;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin-right: 5px; /* Add spacing between the buttons */
+    display: inline-block; /* Ensure they are displayed inline */
+}
+
+.details-btn:hover,
+.hide-btn:hover,
+.order-btn:hover {
+    background-color: #a97726;
+}
+
+/* Style for text style change buttons in footer */
+.text-style-buttons {
+    position: absolute; /* Position relative to the footer */
+    top: 10px; /* Distance from the top of the footer */
+    left: 10px; /* Distance from the left of the footer */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 15px; /* Space between buttons */
+}
+
+.text-style-buttons button {
+    width: 200px; /* Bigger buttons */
+    padding: 12px 20px;
+    font-size: 16px; /* Larger text */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    background-color: var(--green);
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.text-style-buttons button:hover {
+    background-color: #748c2b;
+    color: black;
+}
+
+/* Header Anchor Buttons */
+.header-anchor-buttons {
+    position: absolute; /* Align to the top-right of the header */
+    top: 8px;
+    right: 8px;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 12px; /* Space between buttons */
+    min-width: 120px; /* Set minimum width for the container */
+}
+
+.header-anchor-buttons a,
+.header-anchor-buttons form {
+    width: 120px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.header-anchor-buttons a,
+.header-anchor-buttons button {
+    width: 120px;
+    padding: 4px 8px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    background-color: #545c12;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: block; /* Ensure consistent block display */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.header-anchor-buttons a:hover,
+.header-anchor-buttons button:hover {
+    background-color: #748c2b;
+    color: black;
+}
+
+/* Login Page Styling */
+.login-container {
+    max-width: 500px; /* Increased from 400px */
+    width: 90%; /* Added to ensure responsiveness */
+    margin: 30px auto;
+    padding: 20px; /* Increased padding */
+    background-color: var(--paragraph-bg-color);
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.login-container h2 {
+    font-size: 2rem;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%; /* Ensures the form doesn't exceed the container's width */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+    padding: 20px 30px; /* Increased horizontal padding */
+}
+
+.login-container label {
+    font-size: 1.1rem;
+    color: var(--brown);
+    text-align: left;
+    display: block;
+    margin-top: 10px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid var(--green);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.login-container input[type="submit"] {
+    background-color: var(--green);
+    color: var(--white);
+    padding: 10px 20px;
+    border: 2px solid var(--green);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input[type="submit"]:hover {
+    background-color: var(--brown);
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Providers Grid */
+.providers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 60vh; /* Minimum height to push footer down */
+    align-content: start;
+}
+
+.provider-card {
+    background-color: var(--paragraph-bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px; /* Minimum height to ensure consistent sizing */
+    position: relative;
+    padding-bottom: 60px; /* Make room for the button */
+}
+
+.provider-card h3 {
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.provider-card p {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    flex-grow: 1; /* Allow description to take available space */
+}
+
+.view-services-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 140px;
+    padding: 10px 20px;
+    background-color: var(--green);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-services-btn:hover {
+    background-color: var(--brown);
+}
+
+.provider-info {
+    color: var(--text-color);
+    background-color: var(--paragraph-bg-color);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Dashboard Styles */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between; /* Changed from flex-start to space-between */
+    align-items: center;
+    margin-bottom: 20px;
+    width: 80%; /* Match table width */
+    margin: 0 auto 20px auto;
+}
+
+.section-header h3 {
+    color: white;
+    text-align: center;
+    margin: 0;
+    text-shadow: #000000 2px 2px 4px; /* Black shadow for text */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    overflow-y: auto; /* Allow scrolling for tall content */
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+    margin: auto; /* Changed from 15% to 5% to move it up */
+    padding: 20px;
+    border: 1px solid var(--green);
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Form inside modal needs different styling than the general form */
+.modal form {
+    background: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Dashboard buttons styling */
+.btn-edit,
+.btn-delete {
+    background-color: #94d237;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin: 0 2px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete {
+    background-color: #d23737;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #a97726;
+}
+
+.btn-delete:hover {
+    background-color: #a72626;
+}
+
+/* Remove any form styling when inside table cell */
+td form {
+    background: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    width: auto;
+    display: inline-block;
+}
+
+/* Make all dashboard buttons consistent */
+.btn-add,
+.btn-edit,
+.btn-delete,
+.btn-submit {
+    background-color: #94d237;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin-right: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add:hover,
+.btn-edit:hover,
+.btn-submit:hover {
+    background-color: #a97726;
+}
+
+.btn-delete {
+    background-color: #d23737;
+}
+
+.btn-delete:hover {
+    background-color: #a72626;
+}
+
+/* User Profile Section */
+.user-profile-section {
+    background-color: var(--paragraph-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    width: 80%;
+    margin: 0 auto 30px auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.user-profile-section h2 {
+    color: var(--heading-color);
+    margin-bottom: 15px;
+}
+
+.user-description {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: var(--paragraph-bg-color);
+    border: 1px solid var(--green);
+}
+
+.user-description p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--text-color);
+    line-height: 1.6;
+    text-align: left;
+}
+
+#descriptionModal .modal-content {
+    background-color: var(--paragraph-bg-color);
+    color: var(--text-color);
+}
+
+#descriptionModal textarea {
+    background-color: var(--bg-color);
+    color: #000000 !important; /* Force black text */
+    border: 1px solid var(--green);
+}
+
+#descriptionModal label {
+    color: var(--text-color);
+}
+
+.user-description {
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.user-description p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    font-size: 1.2em;
+    color: var(--text-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal-close:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Remove the old close button style */
+.close {
+    display: none;
+}
+
+/* Form groups and elements */
+.form-group {
+    margin-bottom: 7px;
+}
+
+.form-group:last-of-type {
+    margin-bottom: 18px; /* Extra space after the last form group (checkbox) */
+}

@@ -1,66 +1,45 @@
 @extends('layouts.master')
 
-@section('title', 'Home - School Lunch Boxes')
+@section('title', 'Home')
 
 @section('content')
-<div class="container mx-auto px-4">
-    <section class="text-center mb-12">
-        <h1 class="text-4xl font-bold text-green-800 mb-4">
-            Fresh, Healthy, Delicious Lunch Boxes
-        </h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-            Providing nutritious and varied lunch options for schools in the Punjab region
-        </p>
-    </section>
+    <div class="welcome-box">
+        <p>Welcome to Gourmet Lunch Solutions! We're delighted to serve you with our delicious and nutritious lunch options. Explore our gourmet lunch boxes, freshly baked breads, and hot daily specials designed to satisfy your cravings and elevate your dining experience.</p>
+    </div>
 
-    <section class="grid md:grid-cols-3 gap-6 mb-12">
-        <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-green-700 mb-3">Variety</h3>
-            <p>Daily changing menus with diverse, exciting lunch options</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-green-700 mb-3">Health</h3>
-            <p>Nutritionally balanced meals prepared with fresh, high-quality ingredients</p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold text-green-700 mb-3">Convenience</h3>
-            <p>Easy ordering and timely delivery directly to schools</p>
-        </div>
-    </section>
+    <div class="line"></div>
 
-    <section class="mb-12">
-        <h2 class="text-3xl font-bold text-center mb-6 text-green-800">
-            Our Featured Lunch Boxes
-        </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            @foreach($featuredLunchBoxes as $lunchBox)
-                <div class="bg-white rounded-lg shadow-md p-6 text-center">
-                    <h3 class="text-xl font-semibold mb-3">{{ $lunchBox->name }}</h3>
-                    <p class="text-gray-600 mb-4">{{ $lunchBox->description }}</p>
-                    <p class="text-green-700 font-bold">
-                        Price: ${{ number_format($lunchBox->price, 2) }}
-                    </p>
-                </div>
-            @endforeach
-        </div>
-    </section>
+    <div class="quote-box">
+        <p>"Let food be thy medicine and medicine be thy food."</p>
+        <p class="quote-author">- Hippocrates</p>
+    </div>
+    <div class="line"></div>
+    <div class="quote-box">
+        <p>"Take care of your body. It's the only place you have to live."</p>
+        <p class="quote-author">- Jim Rohn</p>
+    </div>
+    <div class="line"></div>
+    <div class="quote-box">
+        <p>"To eat is a necessity, but to eat intelligently is an art."</p>
+        <p class="quote-author">- François La Rochefoucauld</p>
+    </div>
 
-    <section class="bg-green-50 p-8 rounded-lg">
-        <h2 class="text-3xl font-bold text-center mb-6 text-green-800">
-            What Our Clients Say
-        </h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            @foreach($testimonials as $testimonial)
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <blockquote class="italic text-gray-600 mb-4">
-                        "{{ $testimonial->content }}"
-                    </blockquote>
-                    <footer class="font-semibold text-green-700">
-                        - {{ $testimonial->author }}
-                    </footer>
-                </div>
-            @endforeach
+    <!-- What We Provide -->
+    <h2 class="what-we-provide">What We Provide</h2>
+
+    <!-- Features Section -->
+    <div class="features">
+        <div class="feature-box">
+            <h3>Fresh & Healthy</h3>
+            <p>Our lunch boxes are filled with fresh and nutritious ingredients to keep you energized throughout the day.</p>
         </div>
-    </section>
-</div>
+        <div class="feature-box">
+            <h3>Timely Delivery</h3>
+            <p>We guarantee timely delivery of your lunch boxes, right when you need them.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Customizable Options</h3>
+            <p>Choose from a variety of lunch box options tailored to your dietary needs and preferences.</p>
+        </div>
+    </div>
 @endsection

@@ -1,0 +1,445 @@
+/* Mobile Styles - Applied when screen width is 768px or less */
+@media screen and (max-width: 768px) {
+    /* Global font size adjustments */
+    html {
+        font-size: 12px;
+    }
+
+    /* Header adjustments */
+    header h1 {
+        font-size: 2.5rem;
+        padding-left: 15px;
+    }
+
+    /* Navigation */
+    nav {
+        padding: 5px 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5px;
+    }
+
+    nav ul li {
+        display: inline-block;
+        margin: 5px;
+        width: calc(20%);
+        margin-right: 15px;
+    }
+
+    nav ul li a {
+        width: 100%;
+        max-width: none;
+        padding: 8px 5px;
+        font-size: 0.9rem;
+    }
+
+    /* Container widths */
+    .welcome-box,
+    .quote-box,
+    .about-us-box,
+    .provider-info,
+    .user-profile-section,
+    .section-header,
+    table,
+    .login-container {
+        width: 90%;
+        max-width: 90%;
+        margin: 10px auto;
+    }
+
+    .welcome-box p {
+        font-size: 1.3rem;
+    }
+
+    /* Features section */
+    .features {
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .feature-box {
+        width: 90%;
+        margin-bottom: 15px;
+    }
+
+    /* Text scaling */
+    .what-we-provide,
+    .user-reviews-title {
+        font-size: 2.5rem;
+    }
+
+    /* Form elements */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    textarea {
+        width: 100%;
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    /* Buttons */
+    .details-btn,
+    .hide-btn,
+    .btn-edit,
+    .btn-delete,
+    .btn-submit {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        margin: 0 2px;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        width: 85%;
+        max-width: 85%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    /* Footer adjustments */
+    .text-style-buttons {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        width: 95%;
+        padding: 15px 10px;
+        margin: 0;
+    }
+
+    .text-style-buttons button {
+        width: 30%;
+        font-size: 0.8rem;
+        padding: 8px 5px;
+        margin: 0;
+        white-space: nowrap;
+        min-width: max-content;
+    }
+
+    footer {
+        padding-bottom: 15px;
+    }
+
+    .footer-content {
+        margin-bottom: 10px;
+    }
+
+    /* Table adjustments */
+    table {
+        width: 95%;
+        font-size: 0.9rem;
+        table-layout: fixed; /* Add fixed layout */
+        word-wrap: break-word; /* Allow text to wrap */
+    }
+
+    table th, 
+    table td {
+        padding: 8px 6px;
+        font-size: 0.85rem;
+        overflow-wrap: break-word; /* Ensure long words don't overflow */
+        min-width: 80px; /* Minimum width for cells */
+    }
+
+    /* Specific column widths for orders table */
+    .dashboard-container table th:nth-child(1) { width: 20%; } /* Date */
+    .dashboard-container table th:nth-child(2) { width: 20%; } /* Name */
+    .dashboard-container table th:nth-child(3) { width: 15%; } /* Contact */
+    .dashboard-container table th:nth-child(4) { width: 20%; } /* Lunch Box */
+    .dashboard-container table th:nth-child(5) { width: 25%; } /* Address */
+
+    /* Action buttons in table */
+    td:last-child {
+        flex-direction: row;
+        justify-content: center;
+        gap: 5px;
+        padding: 8px 4px;
+    }
+
+    .btn-edit,
+    .btn-delete {
+        flex: 1;
+        max-width: 60px;
+        padding: 6px 4px;
+        font-size: 0.8rem;
+        margin: 0;
+    }
+
+    /* Form responsiveness */
+    .modal-content,
+    .login-container,
+    form {
+        width: 92vw;
+        max-width: 92vw;
+        padding: 15px 10px;
+        margin: 10px auto;
+        box-sizing: border-box;
+    }
+
+    .form-group {
+        width: 100%;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 5px;
+    }
+
+    /* Fix checkbox alignment */
+    .form-group label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .form-group input[type="checkbox"] {
+        margin: 0;
+        order: -1; /* Places checkbox before the label text */
+        width: auto;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Update modal positioning */
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-content {
+        margin: 10vh auto;
+    }
+
+    /* Header buttons */
+    .header-anchor-buttons {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 10px auto;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+        display: flex;
+        padding: 5px;
+    }
+
+    .header-anchor-buttons a,
+    .header-anchor-buttons button,
+    .header-anchor-buttons form {
+        width: 120px !important;
+        margin: 0 5px;
+    }
+
+    .header-anchor-buttons button {
+        height: 100%;
+        padding: 4px 8px;
+    }
+
+    .header-anchor-buttons form {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .header-anchor-buttons form button {
+        width: 100% !important;
+        margin: 0;
+    }
+
+    /* Provider cards */
+    .providers-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .provider-card {
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .provider-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .provider-card p {
+        font-size: 0.9rem;
+    }
+
+    /* Footer social icons */
+    .footer-content .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .footer-content .social-icons a {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    /* Adjust content spacing */
+    main {
+        padding: 10px;
+    }
+
+    /* Welcome and About sections */
+    .welcome-box,
+    .about-us-box {
+        width: 90%;
+        max-width: 90%;
+        padding: 15px;
+        margin: 10px auto;
+        font-size: 1rem;
+    }
+
+    /* Forms and containers */
+    .login-container,
+    form,
+    .modal-content {
+        width: 85%;
+        max-width: 85%;
+        padding: 15px;
+        margin: 10px auto;
+    }
+
+    /* Testimonials adjustments */
+    .review-box {
+        width: 90%;
+        max-width: 90%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    .review-box h3 {
+        font-size: 1.3rem;
+    }
+
+    .line {
+        width: 90%;
+        margin: 8px auto;
+    }
+
+    /* Place Order Form adjustments */
+    .place-order-form {
+        width: 90%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .place-order-form .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .place-order-form .form-group label {
+        margin-bottom: 5px;
+    }
+
+    .place-order-form .form-group input,
+    .place-order-form .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+
+    .place-order-form input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        box-sizing: border-box;
+    }
+
+    /* Ensure order form takes full table width */
+    .order-row td {
+        padding: 0;
+        width: 100%;
+    }
+
+    /* Place Order Modal adjustments */
+    .place-order-modal-content {
+        width: 80%;
+        max-width: 80%;
+        padding: 15px;
+        margin: 10px auto;
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+}
+
+/* Additional breakpoint for extra small screens */
+@media screen and (max-width: 350px) {
+    .modal-content,
+    .login-container,
+    form {
+        width: 98vw;
+        max-width: 98vw;
+        padding: 10px 8px;
+    }
+
+    .btn-edit,
+    .btn-delete {
+        max-width: none;
+        width: 100%;
+    }
+
+    .place-order-form {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .order-row td {
+        padding: 0;
+        width: 100%;
+    }
+
+    /* Place Order Modal adjustments */
+    .place-order-modal-content {
+        width: 95%;
+        max-width: 95%;
+        padding: 10px;
+        margin: 10px auto;
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+}
+
+/* Additional breakpoint for very small screens */
+@media screen and (max-width: 480px) {
+    .text-style-buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .text-style-buttons button {
+        flex: 1 1 30%;
+        margin: 5px;
+    }
+
+    table {
+        font-size: 0.8rem;
+    }
+
+    table th, 
+    table td {
+        padding: 6px 4px;
+        font-size: 0.75rem;
+    }
+}

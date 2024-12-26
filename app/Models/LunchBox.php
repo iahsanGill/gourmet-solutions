@@ -8,7 +8,7 @@ class LunchBox extends Model
     protected $fillable = [
         'name', 'description', 'price', 
         'ingredients', 'nutritional_info', 
-        'is_available'
+        'is_available', 'user_id'
     ];
 
     protected $casts = [
@@ -19,5 +19,10 @@ class LunchBox extends Model
     public function scopeAvailable($query)
     {
         return $query->where('is_available', true);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class); // Added relationship
     }
 }

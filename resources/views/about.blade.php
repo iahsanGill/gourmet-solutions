@@ -23,7 +23,7 @@
                 <li>Start adding your lunch box offerings with prices and details</li>
             </ol>
         </div>
-        <div style="margin-top: 20px;">
+        <div class="register-section">
             @guest
                 <a href="{{ route('register') }}" class="view-services-btn">Register Now</a>
             @endguest

@@ -308,6 +308,10 @@
         font-size: 1rem;
     }
 
+    .about-us-box {
+        padding-bottom: 70px; /* Increased padding for mobile */
+    }
+
     /* Forms and containers */
     .login-container,
     form,
@@ -380,6 +384,16 @@
         padding: 15px;
         margin: 10px auto;
         box-sizing: border-box; /* Ensure padding is included in width */
+    }
+
+    .register-section {
+        bottom: 15px;
+        padding: 5px 0;
+    }
+
+    .register-section .view-services-btn {
+        width: 80%;
+        max-width: 200px;
     }
 }
 

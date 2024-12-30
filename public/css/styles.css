@@ -478,6 +478,23 @@ table td {
     text-align: center;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1); /* Add some shadow for elegance */
     border: 2px solid var(--green); /* Green border for consistency */
+    position: relative;
+    padding-bottom: 60px; /* Space for the button */
+}
+
+.register-section {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.register-section .view-services-btn {
+    position: static;
+    transform: none;
+    display: inline-block;
 }
 
 /* User Reviews Title */

@@ -1,16 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\LunchBoxController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TestimonialController;
 use App\Http\Controllers\BrowseController;
 use App\Http\Controllers\OrderController;
 
 // Public Routes
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::view('/', 'home')->name('home');
 Route::get('/about', [TestimonialController::class, 'about'])->name('about');
 Route::get('/browse', [BrowseController::class, 'index'])->name('browse');
 Route::get('/services/{user}', [BrowseController::class, 'showUserServices'])->name('services.by.user');
